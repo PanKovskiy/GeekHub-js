@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+
+}
+.maincontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+    border: 2px solid grey;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.container, .item {
+    margin: 5px;
+    border: 1px solid grey;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+}
+
+.recktangle {
+    width: 150px;
+    height: 30px;
+}
