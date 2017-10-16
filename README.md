@@ -1,2 +1,2 @@
 # GeekHub-js
-GeekHub himework
+GeekHub homework
