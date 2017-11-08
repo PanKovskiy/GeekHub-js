@@ -10,7 +10,7 @@ function getStringArguments() {
     var count = 0;
     for (var i=0; i<arguments.length; i++) {
         if (typeof arguments[i] === 'string') {
-            count++
+            count++;
         }
     }
     return count;
