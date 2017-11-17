@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GeekHub Study_1</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="maincontainer">
+    <h2>HEllo USER</h2>
+    <form action="/createUser" class="container"  method="post">
+        <input type="text" name="name"/>
+        <input type="checkbox" name="state" value="active"/>
+        <div class="wrap">
+            <input type="radio" name="type" value="1"/>1
+            <input type="radio" name="type" value="2"/>2
+            <input type="radio" name="type" value="3"/>3
+        </div>
+        <button>Submit</button>
+    </form>
+    <h2>HEllo other INDIVIDUALS</h2>
+    <form action="/createOther" class="container" method="post">
+        <input type="text" name="name"/>
+        <button>Submit</button>
+    </form>
+
+</div>
+</body>
+</html>

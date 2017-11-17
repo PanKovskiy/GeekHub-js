@@ -1,0 +1,36 @@
+.maincontainer{
+    width: 200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: red;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+.container input {
+    margin: 5px 0;
+}
+
+button {
+    border: none;
+}
+
+.container button {
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-align: center;
+    color: yellow;
+    background-color: dimgray;
+    font-weight: bold;
+    font-size: 14px;
+}
+.container button:hover {
+    background-color: yellow;
+    color: dimgray;
+}
