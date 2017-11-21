@@ -1,6 +1,11 @@
 
 module.exports = function (request, response) {
+    console.log(request.body);
     if (request.body.type === '3') {
-        response.json({id: 1, name: 'msR' + request.body.name})
-    } else response.status(505).json({message: 'Invalid type'});
+        console.log('I am was heare');
+        response.json({id: 1, name: 'change name' + request.body.name});
+    } else {
+        console.log('I am heare');
+        response.status(505).json({message: 'Invalid type'});
+    }
 };
