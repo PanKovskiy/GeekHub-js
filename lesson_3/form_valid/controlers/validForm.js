@@ -1,7 +1,10 @@
 module.exports = function (request, response) {
-    if (request.body.inputData.search(/\D/) === -1 ) {
-        return response.json('validtrue');
-    } else {
-        return response.json('validfalse');
-    }
+    var res = request.body;
+
+    res.numbers = /^\d+$/.test(res.numbers);
+    res.letters =/^\D+$/.test(res.letters);
+
+
+
+    response.status(400).send(res);
 }

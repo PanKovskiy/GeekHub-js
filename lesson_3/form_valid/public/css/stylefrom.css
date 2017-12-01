@@ -1,0 +1,12 @@
+p {
+    margin: 0;
+}
+
+span {
+    font-size: x-small;
+}
+
+.msg {
+    color: red;
+    font-weight: bold;
+}
