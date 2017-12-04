@@ -8,13 +8,15 @@
             agreement = jQuery('[name="agreement"]');
             typeradio = jQuery('[name="typeradio"]');
 
+
         jQuery.ajax({
             method: 'POST',
             url: '/validation',
             data: JSON.stringify({
                 numbers: numbers.val(),
                 letters: letters.val(),
-                status: agreement.prop('checked')
+                status: agreement.prop('checked'),
+                typeradio: typeradio
             }),
             dataType: 'json',
             contentType: "application/json; charset=utf-8",

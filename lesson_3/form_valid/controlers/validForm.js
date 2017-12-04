@@ -5,5 +5,9 @@ module.exports = function (request, response) {
     res.letters =/^\D+$/.test(res.letters);
     res.status;
 
+    res.typeradio.filters(function (i , type) {
+        if (res.typeradio.length - 1 )
+    })
+
     response.json(res);
 }
