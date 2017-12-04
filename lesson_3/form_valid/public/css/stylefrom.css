@@ -7,6 +7,14 @@ span {
 }
 
 .msg {
-    color: red;
     font-weight: bold;
+    padding-left: 5px;
+}
+
+.msg-true {
+    color: green;
+}
+
+.msg-false {
+    color: red;
 }
