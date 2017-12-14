@@ -6,8 +6,8 @@
             numbers = jQuery('[name="numbers"]');
             letters = jQuery('[name="letters"]');
             agreement = jQuery('[name="agreement"]');
-            typeradio = jQuery('[name="typeradio"]');
-
+            radio = jQuery('[name="typeradio"]');
+            valueCheckedRadio = jQuery('[name="typeradio"]:checked').val();
 
         jQuery.ajax({
             method: 'POST',
@@ -15,20 +15,23 @@
             data: JSON.stringify({
                 numbers: numbers.val(),
                 letters: letters.val(),
-                status: agreement.prop('checked'),
-                typeradio: typeradio
+                statusCheckBox: agreement.prop('checked'),
+                radio: valueCheckedRadio
             }),
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             cache: false,
             success: function (data) {
-
-                (data.numbers) ? numbers.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):numbers.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
-                (data.letters) ? letters.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):letters.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
-                (data.status) ? agreement.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):agreement.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
+                jQuery('body').html('<div class="message"></div>');
+                jQuery('div').text(data.message);
             },
             error: function (err) {
-                err;
+                console.log(err);
+
+                (err.responseJSON.numbers) ? numbers.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):numbers.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
+                (err.responseJSON.letters) ? letters.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):letters.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
+                (err.responseJSON.statusCheckBox) ? agreement.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):agreement.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
+                (err.responseJSON.radio) ? radio.parent().find('.msg').removeClass('msg-false').addClass('msg-true').text('valid'):radio.parent().find('.msg').removeClass('msg-true').addClass('msg-false').text('not valid');
             }
         });
     });
